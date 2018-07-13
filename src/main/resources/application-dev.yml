@@ -1,0 +1,23 @@
+server:
+  port: 8090
+
+# 驱动配置信息
+spring:
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+      ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  datasource:
+    primary:
+      url: jdbc:mysql://127.0.0.1:3306/master_dev_1?useUnicode=true&characterEncoding=utf8&useSSL=true&serverTimezone=Asia/Shanghai
+      username: root
+      password:
+    secondary:
+      url: jdbc:mysql://127.0.0.1:3306/master_dev_2?useUnicode=true&characterEncoding=utf8&useSSL=true&serverTimezone=Asia/Shanghai
+      username: root
+      password:
